@@ -1,4 +1,18 @@
 #!/bin/bash
+#--------------------------------------------------------------------------------
+# Script Name: create_stereo_fs.sh
+# Description: Creates a directory structure for organizing 
+#              Sony A7 stereo camera data with safety checks.
+#
+# Usage:       chmod +x create_stereo_fs.sh 
+#              ./create_stereo_fs.sh /path/to/parent
+#
+# Example:     ./create_stereo_fs.sh /home/user/.../FieldSiteYYYY/YYYYMMDD/
+#
+# Author:      Nolan R. Bonnie
+# Contact:     nolan.bonnie@colorado.edu 
+# Created:     04/2024
+#--------------------------------------------------------------------------------
 
 # Check if an input directory is provided
 if [[ -z "$1" ]]; then
