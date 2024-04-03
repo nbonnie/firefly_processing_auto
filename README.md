@@ -1,3 +1,4 @@
+# Converting MP4 video to xyt data files
 ```
 %---------------------------------------------------------------------------
 % # Wrapper for Firefly Adaptive Background Subtraction 
@@ -46,6 +47,44 @@
 % * `xyt`: xyt coordinates of detected fireflies.
 % * Other metadata (parameters, background stack info).
 %
+%---------------------------------------------------------------------------
+% License
+%---------------------------------------------------------------------------
+% This project is licensed under the MIT License - see the LICENSE file for details.
+```
+
+# Camera filesystem sctips
+```
+%---------------------------------------------------------------------------
+% #  Camera Directory Creation Script
+%---------------------------------------------------------------------------
+% This script facilitates the organization of Sony A7 camera data.
+
+% Key Features:
+% * Structured Directory Creation: Generates a hierarchy tailored for Sony A7 
+%   camera data and Fusion IR data (including 'cam1' and 'cam2' subdirectories).
+% * Safety Checks: Prevents overwriting existing directories, providing warnings
+%   to protect data integrity.
+% * User-Friendly: Requires a single input (absolute path to the parent directory).
+
+%---------------------------------------------------------------------------
+% Usage
+%---------------------------------------------------------------------------
+% Prerequisites:
+% * Bash shell environment
+
+% Instructions:
+% 1. Download the script 
+% 2. Make the script executable:
+%    ```bash
+%    chmod +x create_camera_dirs.sh
+%    ```
+% 3. Run the script, providing the parent directory path:
+%    ```bash
+%    ./create_IR_fs.sh /path/to/parent 
+%    ``` 
+%    Example: ./create_IR_fs.sh /home/user/CameraData/2024-04-03
+
 %---------------------------------------------------------------------------
 % License
 %---------------------------------------------------------------------------
