@@ -23,7 +23,7 @@ fi
 parent_dir="$1"
 
 # Directories to create
-sub_dirs=("Fusion_IR_Raw" "Fusion_IR_Sphere" "Fusion_IR_xyt" "Fusion_IR_xyzt")
+sub_dirs=("Fusion_IR_Raw" "Fusion_IR_Chapters" "Fusion_IR_Sphere" "Fusion_IR_xyt" "Fusion_IR_xyzt")
 cam_dirs=("cam1" "cam2")
 
 # Create the parent directory if it doesn't exist
@@ -35,7 +35,7 @@ for dir in "${sub_dirs[@]}"; do
   mkdir -p "$full_path"  # Create the subdirectory if it doesn't exist
 
   # Create 'cam1' and 'cam2' directories inside specified subdirectories
-  if [[ "$dir" == "Fusion_IR_Raw" || "$dir" == "Fusion_IR_Sphere" || "$dir" == "Fusion_IR_xyt" ]]; then
+  if [[ "$dir" == "Fusion_IR_Raw" || "$dir" == "Fusion_IR_Chapters" || "$dir" == "Fusion_IR_Sphere" || "$dir" == "Fusion_IR_xyt" ]]; then
     for cam in "${cam_dirs[@]}"; do
       cam_path="$full_path/$cam"
       mkdir -p "$cam_path"
