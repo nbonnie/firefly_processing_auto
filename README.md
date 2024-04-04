@@ -83,10 +83,84 @@
 %    ```bash
 %    ./create_IR_fs.sh /path/to/parent 
 %    ``` 
-%    Example: ./create_IR_fs.sh /home/user/CameraData/2024-04-03
+%    Example: ./create_IR_fs.sh /path/to/field_season/YYYYMMDD
 
 %---------------------------------------------------------------------------
 % License
 %---------------------------------------------------------------------------
 % This project is licensed under the MIT License - see the LICENSE file for details.
+```
+
+# GoPro Fusion stitching front and back into 360 videos
+```
+%---------------------------------------------------------------------------
+% # GoPro Fusion IR Stitching Script
+%---------------------------------------------------------------------------
+% This script automates the stitching of GoPro Fusion IR videos
+%
+% Key Features:
+% * Finds Front & Back Videos: Searches '100GFRNT' and '100GBACK' for videos.
+% * Handles Chapters:  Supports initial chapters (GPFR/GPBK) & subsequent chapters (GF/GB)
+% * Stitches with ffmpeg:  Uses ffmpeg for efficient stitching.
+% * Clear Output Structure:  Places stitched videos in 'Fusion_IR_Sphere' subdirectories.
+
+%---------------------------------------------------------------------------
+% Usage
+%---------------------------------------------------------------------------
+% Prerequisites:
+% * Bash shell environment
+% * ffmpeg installed
+
+% Instructions:
+% 1. Download the script.
+% 2. Make it executable:
+%    ```bash
+%    chmod +x stitch_360.sh
+%    ```
+% 3. Run the script with your input directory:
+%    ```bash
+%    ./stitch_360.sh /path/to/field_season/YYYYMMDD
+%    ```
+
+%---------------------------------------------------------------------------
+% License
+%---------------------------------------------------------------------------
+% This project is licensed under the MIT License - see the LICENSE file for details.
+```
+
+# GoPro story detection and ffmpeg concatenation
+```
+%---------------------------------------------------------------------------
+% # Chapter to Story Script
+%---------------------------------------------------------------------------
+% This script creates stories from GoPro Fusion IR video chapters.
+%
+% Key Features:
+% * Story Grouping:  Identifies stories based on numerical IDs in filenames.
+* * Chapter Ordering: Ensures GPFR chapters come first within each story.
+% * Concatenation Using ffmpeg: Stitches chapters into seamless story videos.
+% * Handles Subdirectories:  Supports chapters organized within subdirectories.
+
+%---------------------------------------------------------------------------
+% Usage
+%---------------------------------------------------------------------------
+% Prerequisites:
+% * Bash shell environment
+% * ffmpeg installed
+
+% Instructions:
+% 1. Download the script.
+% 2. Make it executable: 
+%    ```bash
+%    chmod +x chapter_2_story.sh
+%    ```
+% 3. Run the script with your input directory:
+%    ```bash
+%    ./chapter_2_story.sh /path/to/field_season/YYYYMMDD
+%    ```
+
+%---------------------------------------------------------------------------
+% License
+%---------------------------------------------------------------------------
+% This project is licensed under the MIT License - see the LICENSE file for details. 
 ```
