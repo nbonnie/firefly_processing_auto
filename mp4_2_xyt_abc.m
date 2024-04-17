@@ -53,6 +53,9 @@ for cam = cams
     path_to_folder = strcat(PATH,cam);
     addpath(genpath(path_to_folder))
     fnames = dir(strcat(path_to_folder,"*.mp4"));
+    if isempty(fnames)
+        fnames = dir(strcat(path_to_folder,"*.MP4"));
+    end
     disp(fnames)
     video_path = strcat(path_to_folder + fnames(1).name);
     ff = fffabc(video_path);
@@ -104,6 +107,7 @@ function ff = fffabc(video_path)
 
 %% Read in video
 v = VideoReader(video_path);
+disp(v)
 frameRate = v.FrameRate;
 
 %% processing parameters, can be changed
@@ -113,6 +117,9 @@ blurRadius = 1; %prm.trk.blurRadiusPxl;
 bkgrWinWidthSec = 2; %prm.trk.bkgrStackSec; 
 bwth = 0.1; %prm.trk.bwThr;
 bkgrWinSize = bkgrWinWidthSec*frameRate;
+
+disp(frameRate)
+disp(bkgrWinSize)
 
 %% initial background stack
 % create background stack
@@ -222,7 +229,7 @@ ff.blurRadius = blurRadius;
 ff.bkgrWinWidthSec = bkgrWinWidthSec;
 ff.bkgrStack = bkgrStack;
 ff.bkgrIdx = bkgrIdx;
-%ff.mov = get(v{1});
+ff.mov = get(v{1});
 %ff.code = fileread([mfilename('fullpath') '.m']);
 
 % finish time

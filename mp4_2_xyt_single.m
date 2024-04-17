@@ -211,7 +211,7 @@ ff.blurRadius = blurRadius;
 ff.bkgrWinWidthSec = bkgrWinWidthSec;
 ff.bkgrStack = bkgrStack;
 ff.bkgrIdx = bkgrIdx;
-%ff.mov = get(v{1});
+ff.mov = get(v{1});
 %ff.code = fileread([mfilename('fullpath') '.m']);
 
 % finish time
