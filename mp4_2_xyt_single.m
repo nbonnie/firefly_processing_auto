@@ -93,7 +93,9 @@ function ff = fffabc(video_path)
 
 %% Read in video
 v = VideoReader(video_path);
+disp(v)
 frameRate = v.FrameRate;
+disp("Video read in correctly")
 
 %% processing parameters, can be changed
 % blurring radius for frame processing (default = 1)
@@ -102,6 +104,7 @@ blurRadius = 1; %prm.trk.blurRadiusPxl;
 bkgrWinWidthSec = 2; %prm.trk.bkgrStackSec; 
 bwth = 0.1; %prm.trk.bwThr;
 bkgrWinSize = bkgrWinWidthSec*frameRate;
+disp(bkgrWinSize)
 
 %% initial background stack
 % create background stack
