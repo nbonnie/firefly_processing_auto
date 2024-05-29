@@ -49,11 +49,20 @@ function convert_to_mp4() {
   fi
 
   # ffmpeg conversion command (with error checking)
-  sudo ffmpeg \
+  ffmpeg \
     -hwaccel opencl -v verbose \
-    -filter_complex "[0:0]format=yuv420p,hwupload[a], [0:5]format=yuv420p,hwupload[b], [a][b]gopromax_opencl, hwdownload,format=yuv420p" \
     -i "$input_file" \
-    -c:v libx264 -pix_fmt yuv420p -map_metadata 0 -map 0:a -map 0:3 \
+    -filter_complex "[0:0]format=yuv420p,hwupload[a]; [0:5]format=yuv420p,hwupload[b]; [a][b]gopromax_opencl,hwdownload,format=yuv420p" \
+    -c:v libx264 \
+    -crf 16 \
+    -preset slow \
+    -pix_fmt yuv420p \
+    -map_metadata 0 \
+    -map 0:a \
+    -map 0:3 \
+    -b:v 30M \
+    -maxrate 70M \
+    -bufsize 70M \
     "$output_file" || {
         echo "Error converting $input_file" 
         return 
