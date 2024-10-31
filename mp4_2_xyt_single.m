@@ -102,7 +102,7 @@ disp("Video read in correctly")
 blurRadius = 1; %prm.trk.blurRadiusPxl;
 % railing background window size, in seconds (default = 1)
 bkgrWinWidthSec = 2; %prm.trk.bkgrStackSec; 
-bwth = 0.1; %prm.trk.bwThr;
+bwth = 0.02; %prm.trk.bwThr;
 bkgrWinSize = bkgrWinWidthSec*frameRate;
 disp(bkgrWinSize)
 
@@ -214,7 +214,7 @@ ff.blurRadius = blurRadius;
 ff.bkgrWinWidthSec = bkgrWinWidthSec;
 ff.bkgrStack = bkgrStack;
 ff.bkgrIdx = bkgrIdx;
-ff.mov = get(v{1});
+%ff.mov = get(v{1});
 %ff.code = fileread([mfilename('fullpath') '.m']);
 
 % finish time
